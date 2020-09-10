@@ -10,8 +10,8 @@ function send(obj) {
       secure: false,
       // ssl should be on
       auth: {
-        user: "brainyloki@gmail.com", // <- email here
-        pass: "LokiIsBrainy" // <- password here
+        user: process.env.EMAIL, // <- email here
+        pass: process.env.PASS // <- password here
       },
       tls: {
         rejectUnauthorized: false
@@ -24,7 +24,7 @@ function send(obj) {
     */
 
     var mailOptions = {
-      from: "brainyloki@gmail.com", // <- email here
+      from: process.env.EMAIL, // <- email here
       to: "leolaotan@gmail.com", // <- recipient email here
       subject: "Test Nodemailer with Gmail from Server",
 
